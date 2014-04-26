@@ -1,0 +1,6 @@
+name: ReduceUnpopularBlocks
+main: net.mahagon.ReduceUnpopularBlocks.ReduceUnpopularBlocksPlugin
+author: Mahagon
+prefix: ReduceUnpopularBlocks
+desciption: Prevent placing of specified blocks in a specified radius.
+version: 1.0.0
