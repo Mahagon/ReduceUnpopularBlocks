@@ -3,4 +3,47 @@ main: net.mahagon.ReduceUnpopularBlocks.ReduceUnpopularBlocksPlugin
 author: Mahagon
 prefix: ReduceUnpopularBlocks
 desciption: Prevent placing of specified blocks in a specified radius.
-version: 1.0.0
+version: 1.0.1
+
+commands:
+   rub:
+      description: Shows up ReduceUnpopularBlocks commands.
+      usage: /rub
+   rub add:
+      description: Adds a new Entry
+      usage: /rub add <block> <radius> <maxallowed>
+      permission: rub.add
+   rub del:
+      description: Removes an Entry
+      usage: /rub del <block>
+      permission: rub.del
+   rub list:
+      description: List all blocks
+      usage: /rub list
+      permission: rub.list
+   rub reload:
+      description: Reloads the config file
+      usage: /rub reload
+      permission: rub.reload
+      
+permissions:
+   rub.*:
+      description: Gives access to all ReduceUnpopularBlocks commands
+      default: op
+      children:
+         rub.add: true
+         rub.del: true
+         rub.list: true
+         rub.reload: true
+   rub.add:
+      description: Gives access to the /rub add command
+      default: op
+   rub.del:
+      description: Gives access to the /rub del command
+      default: op
+   rub.list:
+      description: Gives access to the /rub list command
+      default: op
+   rub.reload:
+      description: Gives access to the /rub reload command
+      default: op
