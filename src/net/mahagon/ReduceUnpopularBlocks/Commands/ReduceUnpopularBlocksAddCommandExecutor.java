@@ -35,7 +35,7 @@ public class ReduceUnpopularBlocksAddCommandExecutor implements CommandExecutor
 					throw new IllegalArgumentException("Radius must be a Number.");
 				}
 				try {
-					allowednumberofblocks = Integer.parseInt(args[2]);
+					allowednumberofblocks = Integer.parseInt(args[3]);
 				}catch(NumberFormatException e) {
 					throw new IllegalArgumentException("Radius must be a Number.");
 				}
