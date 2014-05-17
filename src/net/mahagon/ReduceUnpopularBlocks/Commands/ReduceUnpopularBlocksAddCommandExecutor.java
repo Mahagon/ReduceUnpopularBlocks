@@ -24,11 +24,11 @@ public class ReduceUnpopularBlocksAddCommandExecutor implements CommandExecutor
 			if(args.length == 4) {
 				int checkradius;
 				int allowednumberofblocks;
-
-				String material = Material.matchMaterial(args[1]).toString();
-				if(material == null) {
+				Material matchmaterial = Material.matchMaterial(args[1]);
+				if(matchmaterial == null) {
 					throw new IllegalArgumentException("Material not found.");
 				}
+				String material = matchmaterial.toString();
 				try {
 					checkradius = Integer.parseInt(args[2]);
 				}catch(NumberFormatException e) {
@@ -37,7 +37,7 @@ public class ReduceUnpopularBlocksAddCommandExecutor implements CommandExecutor
 				try {
 					allowednumberofblocks = Integer.parseInt(args[3]);
 				}catch(NumberFormatException e) {
-					throw new IllegalArgumentException("Radius must be a Number.");
+					throw new IllegalArgumentException("The Amount of blocks must be a Number.");
 				}
 				FileConfiguration config = plugin.getConfig();
 				config.options().configuration().set("searchfor." + material + ".activate", true);
