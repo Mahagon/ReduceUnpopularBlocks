@@ -39,6 +39,8 @@ public class ReduceUnpopularBlocksPlugin extends JavaPlugin
 
 		BlockListener blockListener = new BlockListener(this);
 		Bukkit.getServer().getPluginManager().registerEvents(blockListener, this);
+		HangingBlockListener hangingBlockListener = new HangingBlockListener(this);
+		Bukkit.getServer().getPluginManager().registerEvents(hangingBlockListener, this);
 	}
 
 }

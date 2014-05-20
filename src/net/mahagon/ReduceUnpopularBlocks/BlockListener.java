@@ -30,7 +30,6 @@ public class BlockListener implements Listener
 		if(config.getBoolean("searchfor." + material + ".activate") == false) {
 			return;
 		}
-		;
 		int radius = config.getInt("searchfor." + material + ".checkradius");
 		int allowednumberofblocks = config.getInt("searchfor." + material + ".allowednumberofblocks");
 		int blockCounter = 1;
@@ -53,7 +52,6 @@ public class BlockListener implements Listener
 										"[" + plugin.getName().toString() + "] " + player.getName() + " tried to set more than "
 												+ allowednumberofblocks + " blocks of " + material + " in a radius of " + radius + ".");
 							}
-							;
 							event.setCancelled(true);
 							return;
 						}
