@@ -1,22 +1,78 @@
-# Eclipse stuff
-/.classpath
-/.project
-/.settings
-/eclipse
+# Build #
+#########
+MANIFEST.MF
+dependency-reduced-pom.xml
+.checkstyle
 
-# Mac filesystem dust
-/.DS_Store
+# Compiled #
+############
+bin
+build
+dist
+lib
+out
+target
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# intellij
+# Databases #
+#############
+*.db
+*.sql
+*.sqlite
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+# Repository #
+##############
+.git
+/repo
+
+# Logging #
+###########
+/logs
+*.log
+
+# Misc #
+########
+*.bak
+
+# System #
+##########
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# Project #
+###########
+.classpath
+.externalToolBuilders
+.gradle
+.nb-gradle
+.idea
+.project
+.settings
+nbproject
+atlassian-ide-plugin.xml
+build.xml
+nb-configuration.xml
 *.iml
 *.ipr
 *.iws
-.idea/
 
-# various other potential build files
-/build
-/bin
-/release
-/agitar
-/dist
-/manifest.mf
+# Other Files #
+###############
+/openCmd.bat
+/run
