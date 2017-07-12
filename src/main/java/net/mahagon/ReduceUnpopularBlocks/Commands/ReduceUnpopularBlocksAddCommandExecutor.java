@@ -44,13 +44,13 @@ public class ReduceUnpopularBlocksAddCommandExecutor implements CommandExecutor
 				config.options().configuration().set("searchfor." + material + ".checkradius", checkradius);
 				config.options().configuration().set("searchfor." + material + ".allowednumberofblocks", allowednumberofblocks);
 				plugin.saveConfig();
-				sender.sendMessage(ChatColor.GOLD + "[" + plugin.getName().toString() + "] " + material + " has been added.");
+				sender.sendMessage(ChatColor.GOLD + "[" + plugin.getName() + "] " + material + " has been added.");
 			}
 			else {
 				throw new IllegalArgumentException("Wrong number of arguments.");
 			}
 		}catch(IllegalArgumentException e) {
-			sender.sendMessage(ChatColor.RED + "[" + plugin.getName().toString() + "] " + e.getMessage());
+			sender.sendMessage(ChatColor.RED + "[" + plugin.getName() + "] " + e.getMessage());
 			PluginDescriptionFile description = plugin.getDescription();
 			sender.sendMessage(ChatColor.GOLD + "  " + description.getCommands().get("rub " + args[0].toLowerCase()).get("description"));
 			sender.sendMessage(ChatColor.GOLD + "  - usage: " + ChatColor.WHITE

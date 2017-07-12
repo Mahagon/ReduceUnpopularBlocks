@@ -36,7 +36,7 @@ public class ReduceUnpopularBlocksListCommandExecutor implements CommandExecutor
 				throw new IllegalArgumentException("Wrong number of arguments.");
 			}
 		}catch(IllegalArgumentException e) {
-			sender.sendMessage(ChatColor.RED + "[" + plugin.getName().toString() + "] " + e.getMessage());
+			sender.sendMessage(ChatColor.RED + "[" + plugin.getName() + "] " + e.getMessage());
 			PluginDescriptionFile description = plugin.getDescription();
 			sender.sendMessage(ChatColor.GOLD + "  " + description.getCommands().get("rub " + args[0].toLowerCase()).get("description"));
 			sender.sendMessage(ChatColor.GOLD + "  - usage: " + ChatColor.WHITE

@@ -30,14 +30,14 @@ public class ReduceUnpopularBlocksCommandExecutor implements CommandExecutor
 			PluginCommand pluginCmd = Bukkit.getServer().getPluginCommand(cmdLabel + " " + args[0]);
 
 			if(!pluginCmd.testPermissionSilent(sender)) {
-				sender.sendMessage(ChatColor.RED + "[" + plugin.getName().toString() + "] You don't have permission.");
+				sender.sendMessage(ChatColor.RED + "[" + plugin.getName() + "] You don't have permission.");
 				return true;
 			}
 
 			return pluginCmd.execute(sender, cmdLabel, args);
 		}catch(Exception e) {
 			PluginDescriptionFile description = plugin.getDescription();
-			sender.sendMessage(ChatColor.GOLD + "[" + plugin.getName().toString() + "] Version " + description.getVersion());
+			sender.sendMessage(ChatColor.GOLD + "[" + plugin.getName() + "] Version " + description.getVersion());
 			Map<String, Map<String, Object>> customers = description.getCommands();
 			Set<String> keys = customers.keySet();
 			for(String singleKey : keys) {

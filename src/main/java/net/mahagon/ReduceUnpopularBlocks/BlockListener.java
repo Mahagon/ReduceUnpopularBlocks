@@ -15,7 +15,7 @@ public class BlockListener implements Listener
 
 	private ReduceUnpopularBlocksPlugin plugin;
 
-	public BlockListener(ReduceUnpopularBlocksPlugin plugin) {
+	BlockListener(ReduceUnpopularBlocksPlugin plugin) {
 		this.plugin = plugin;
 	}
 
@@ -27,7 +27,7 @@ public class BlockListener implements Listener
 		FileConfiguration config = plugin.getConfig();
 		String material = block.getType().toString();
 		// if deactivated, don't continue checking
-		if(config.getBoolean("searchfor." + material + ".activate") == false) {
+		if(!config.getBoolean("searchfor." + material + ".activate")) {
 			return;
 		}
 		int radius = config.getInt("searchfor." + material + ".checkradius");
@@ -46,11 +46,11 @@ public class BlockListener implements Listener
 					if(material.equalsIgnoreCase(world.getBlockAt(x, y, z).getType().toString())) {
 						if(blockCounter > allowednumberofblocks) {
 							player.sendMessage(ChatColor.RED + "It's not allowed to place more than " + allowednumberofblocks + " blocks of "
-									+ material + " in a radius of " + radius + ".");
-							if(config.getBoolean("general.warnonconsole") == true) {
+									+ material + " in a radius of " + radius + "");
+							if(config.getBoolean("general.warnonconsole")) {
 								Bukkit.getLogger().info(
-										"[" + plugin.getName().toString() + "] " + player.getName() + " tried to set more than "
-												+ allowednumberofblocks + " blocks of " + material + " in a radius of " + radius + ".");
+										"[" + plugin.getName() + "] " + player.getName() + " tried to set more than "
+												+ allowednumberofblocks + " blocks of " + material + " in a radius of " + radius + "");
 							}
 							event.setCancelled(true);
 							return;
